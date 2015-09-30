@@ -1,0 +1,16 @@
+{
+    "name": "neirda24/liipthemeprovider",
+    "type": "symfony-bundle",
+    "description": "Allow to create some custom providers for the theme list.",
+    "license": "MIT",
+    "require": {
+        "php": ">=5.4.0",
+        "symfony/symfony": "~2.3",
+        "liip/theme-bundle": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Neirda\\Bundle\\": ""
+        }
+    }
+}
