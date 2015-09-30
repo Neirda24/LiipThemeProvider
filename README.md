@@ -42,3 +42,51 @@ class AppKernel extends Kernel
     // ...
 }
 ```
+
+How to use it
+=============
+
+Step 1: Create your provider class
+----------------------------------
+
+```php
+<?php
+// src/AppBundle/ThemeProvider
+
+use Neirda\Bundle\LiipThemeProvider\ThemeProviderInterface;
+
+// ...
+class ThemeProvider implements ThemeProviderInterface
+{
+    /**
+     * {@inheritdoc}
+     */
+    public function getThemeList()
+    {
+        // implement your logic here...
+    }
+
+    // ...
+}
+```
+
+Step 2: Declare the service
+---------------------------
+
+Your service must be tagged with `liip_theme_provider.theme_provider`.
+
+XML:
+```xml
+...
+
+    <services>
+        ...
+        <service id="app.theme.provider" class="AppBundle\ThemeProvider\ThemeProvider">
+            <tag name="liip_theme_provider.theme_provider" />
+        </service>
+        ...
+    </services>
+...
+```
+
+**Done !!**
