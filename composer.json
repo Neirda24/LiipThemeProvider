@@ -2,6 +2,11 @@
     "name": "neirda24/liipthemeprovider",
     "type": "symfony-bundle",
     "description": "Allow to create some custom providers for the theme list.",
+    "keywords": [
+        "LiipThemeBundle",
+        "provider",
+        "theming"
+    ],
     "license": "MIT",
     "require": {
         "php": ">=5.4.0",
@@ -12,5 +17,12 @@
         "psr-4": {
             "Neirda\\Bundle\\": ""
         }
-    }
+    },
+    "authors": [
+        {
+            "name": "Adrien Schaegis",
+            "email": "rochesadrien@gmail.com",
+            "role": "Developer"
+        }
+    ]
 }
