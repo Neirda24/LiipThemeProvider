@@ -33,7 +33,7 @@ class AppKernel extends Kernel
         $bundles = array(
             // ...
 
-            new Neirda\Bundle\LiipThemeProvider\LiipThemeProviderBundle()
+            new Neirda\Bundle\LiipThemeProvider\LiipThemeProviderBundle(),
         );
 
         // ...

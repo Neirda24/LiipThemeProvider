@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Neirda\\Bundle\\": ""
+            "Neirda\\Bundle\\LiipThemeProvider\\": ""
         }
     },
     "authors": [
