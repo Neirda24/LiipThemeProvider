@@ -1,3 +1,5 @@
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/ecf43130-0672-4fb8-98b2-56a8f732421e/big.png)](https://insight.sensiolabs.com/projects/ecf43130-0672-4fb8-98b2-56a8f732421e)
+
 Installation
 ============
 
