@@ -11,7 +11,7 @@
     "require": {
         "php": ">=5.4.0",
         "symfony/symfony": "~2.3",
-        "liip/theme-bundle": "dev-master"
+        "liip/theme-bundle": "~1"
     },
     "autoload": {
         "psr-4": {
