@@ -66,6 +66,7 @@ class ThemeProvider implements ThemeProviderInterface
     public function getThemeList()
     {
         // implement your logic here...
+        // it should return an array event if it is empty
     }
 
     // ...
@@ -92,3 +93,84 @@ XML:
 ```
 
 **Done !!**
+
+Example
+=======
+
+Create this class:
+ 
+```php
+<?php
+// src/AppBundle/ThemeProvider
+
+use Neirda\Bundle\LiipThemeProvider\Theme\ThemeProviderInterface;
+use Symfony\Component\Finder\Finder;
+use Symfony\Component\Finder\SplFileInfo;
+
+class ThemeProvider implements ThemeProviderInterface
+{
+    /**
+     * @const THEMES_PATH
+     */
+    const THEMES_PATH = 'src/AppBundle/Resources/themes';
+
+    /**
+     * @var string
+     */
+    protected $rootDir;
+
+    /**
+     * @var null|array
+     */
+    protected $themeList = null;
+
+    /**
+     * Constructor.
+     *
+     * @param string $rootDir
+     */
+    public function __construct($rootDir)
+    {
+        $this->rootDir = $rootDir;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getThemeList()
+    {
+        if (!is_array($this->themeList)) {
+            $path   = rtrim($this->rootDir, '/') . '/' . ltrim(static::THEMES_PATH, '/');
+            $themes = new Finder();
+            $themes->directories()->depth('== 0')->in($path);
+            $themeList = [];
+            foreach ($themes as $theme) {
+                /** @var SplFileInfo $theme */
+                $themeList[] = $theme->getFilename();
+            }
+
+            $this->themeList = $themeList;
+        }
+
+        return $this->themeList;
+    }
+}
+```
+
+And declare your service:
+
+xml
+---
+
+```xml
+...
+<services>
+    <service id="app.theme.provider" class="AppBundle\Provider\ThemeProvider">
+        <argument>%kernel.root_dir%/../</argument>
+        <tag name="liip_theme_provider.theme_provider" />
+    </service>
+</services>
+...
+```
+
+Now, all you have to do is just creating a new folder and it will be automatically added to the themes available.
