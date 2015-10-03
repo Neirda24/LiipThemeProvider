@@ -44,7 +44,7 @@ class ActiveTheme extends Base
     /**
      * {@inheritdoc}
      */
-    public function __construct($name, array $themes = [], DeviceDetectionInterface $deviceDetection = null)
+    public function __construct($name, array $themes = array(), DeviceDetectionInterface $deviceDetection = null)
     {
         parent::__construct($name, $themes, $deviceDetection);
     }

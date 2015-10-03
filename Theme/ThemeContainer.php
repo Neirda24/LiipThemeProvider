@@ -24,10 +24,10 @@ class ThemeContainer implements ThemeContainerInterface
      *
      * @param array $defaultThemeList
      */
-    public function __construct(array $defaultThemeList = [])
+    public function __construct(array $defaultThemeList = array())
     {
         $this->defaultThemeList = $defaultThemeList;
-        $this->themeProviders   = [];
+        $this->themeProviders   = array();
         $this->themeList        = null;
     }
 

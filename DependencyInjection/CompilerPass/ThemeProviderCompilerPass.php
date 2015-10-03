@@ -30,7 +30,7 @@ class ThemeProviderCompilerPass implements CompilerPassInterface
         foreach ($taggedServices as $id => $tags) {
             $definition->addMethodCall(
                 'addThemeProvider',
-                [new Reference($id)]
+                array(new Reference($id))
             );
         }
     }
