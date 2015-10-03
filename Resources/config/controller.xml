@@ -14,9 +14,7 @@
             <argument type="service" id="liip_theme.active_theme" />
             <argument>%liip_theme.themes%</argument>
             <argument>%liip_theme.cookie%</argument>
-            <call method="setThemeContainer">
-                <argument type="service" id="liip_theme_provider.theme_container" />
-            </call>
+            <argument type="service" id="liip_theme_provider.theme_container" />
         </service>
 
         <service id="liip_theme_provider.active_theme" class="%liip_theme_provider.active_theme.class%">

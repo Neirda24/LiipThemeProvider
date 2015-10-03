@@ -2,7 +2,6 @@
 
 namespace Neirda\Bundle\LiipThemeProvider\Controller;
 
-use Doctrine\ORM\EntityManager;
 use Neirda\Bundle\LiipThemeProvider\ThemeContainerInterface;
 use Liip\ThemeBundle\ActiveTheme;
 use Liip\ThemeBundle\Controller\ThemeController as Base;
@@ -17,34 +16,12 @@ class ThemeController extends Base
 
     /**
      * {@inheritdoc}
-     */
-    public function __construct(ActiveTheme $activeTheme, array $themes, array $cookieOptions)
-    {
-        parent::__construct($activeTheme, $themes, $cookieOptions);
-    }
-
-    /**
-     * Get ThemeContainer
-     *
-     * @return ThemeContainerInterface|null
-     */
-    public function getThemeContainer()
-    {
-        return $this->themeContainer;
-    }
-
-    /**
-     * Set ThemeContainer
-     *
      * @param ThemeContainerInterface|null $themeContainer
-     *
-     * @return $this
      */
-    public function setThemeContainer(ThemeContainerInterface $themeContainer = null)
+    public function __construct(ActiveTheme $activeTheme, array $themes, array $cookieOptions, ThemeContainerInterface $themeContainer)
     {
         $this->themeContainer = $themeContainer;
-
-        return $this;
+        parent::__construct($activeTheme, $themes, $cookieOptions);
     }
 
     /**
