@@ -54,6 +54,10 @@ class ThemeContainer implements ThemeContainerInterface
             }
         }
 
+        if (null === $this->themeList) {
+            $this->themeList = array();
+        }
+
         return $this->themeList;
     }
 }
