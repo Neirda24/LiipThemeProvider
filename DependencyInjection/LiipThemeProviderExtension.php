@@ -20,10 +20,17 @@ class LiipThemeProviderExtension extends Extension
     public function load(array $configs, ContainerBuilder $container)
     {
         $configuration = new Configuration();
-        $this->processConfiguration($configuration, $configs);
+        $config = $this->processConfiguration($configuration, $configs);
+
+        if (is_array($config['filesystem']) && count($config['filesystem']) > 0) {
+            $container->setParameter('liip_theme_provider.config.filesystem.paths', $config['filesystem']);
+        } else {
+            $container->removeDefinition('liip_theme_provider.provider.filesystem');
+        }
 
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('container.xml');
         $loader->load('controller.xml');
+        $loader->load('provider.xml');
     }
 }
