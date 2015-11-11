@@ -18,7 +18,14 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $treeBuilder->root('liip_theme_provider');
+        $config = $treeBuilder->root('liip_theme_provider');
+
+        $config
+            ->children()
+                ->arrayNode('filesystem')
+                    ->example('- %kernel.root_dir%/../src/AppBundle/Resources/themes')
+                ->end()
+            ->end();
 
         return $treeBuilder;
     }
