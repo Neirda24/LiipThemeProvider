@@ -34,11 +34,11 @@ class FilesystemThemeProvider implements ThemeProviderInterface
     public function getThemeList()
     {
         if (!is_array($this->themeList)) {
+            $themeList = array();
             foreach ($this->paths as $path) {
                 $path   = rtrim($path, DIRECTORY_SEPARATOR);
                 $themes = new Finder();
                 $themes->directories()->depth('== 0')->in($path);
-                $themeList = [];
                 foreach ($themes as $theme) {
                     /** @var SplFileInfo $theme */
                     $themeList[] = $theme->getFilename();

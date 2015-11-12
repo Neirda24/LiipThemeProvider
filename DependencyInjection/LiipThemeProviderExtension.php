@@ -24,8 +24,6 @@ class LiipThemeProviderExtension extends Extension
 
         if (is_array($config['filesystem']) && count($config['filesystem']) > 0) {
             $container->setParameter('liip_theme_provider.config.filesystem.paths', $config['filesystem']);
-        } else {
-            $container->removeDefinition('liip_theme_provider.provider.filesystem');
         }
 
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
