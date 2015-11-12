@@ -23,7 +23,9 @@ class Configuration implements ConfigurationInterface
         $config
             ->children()
                 ->arrayNode('filesystem')
-                    ->example('- %kernel.root_dir%/../src/AppBundle/Resources/themes')
+                    ->prototype('scalar')
+                        ->example('- %kernel.root_dir%/../src/AppBundle/Resources/themes')
+                    ->end()
                 ->end()
             ->end();
 
