@@ -1,4 +1,10 @@
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/ecf43130-0672-4fb8-98b2-56a8f732421e/big.png)](https://insight.sensiolabs.com/projects/ecf43130-0672-4fb8-98b2-56a8f732421e)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Neirda24/LiipThemeProvider/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Neirda24/LiipThemeProvider/?branch=master)
+[![Latest Stable Version](https://poser.pugx.org/neirda24/liipthemeprovider/v/stable)](https://packagist.org/packages/neirda24/liipthemeprovider) 
+[![Total Downloads](https://poser.pugx.org/neirda24/liipthemeprovider/downloads)](https://packagist.org/packages/neirda24/liipthemeprovider) 
+[![Latest Unstable Version](https://poser.pugx.org/neirda24/liipthemeprovider/v/unstable)](https://packagist.org/packages/neirda24/liipthemeprovider) 
+[![License](https://poser.pugx.org/neirda24/liipthemeprovider/license)](https://packagist.org/packages/neirda24/liipthemeprovider)
+[![Dependency Status](https://www.versioneye.com/user/projects/56589a25ff016c003a001c19/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56589a25ff016c003a001c19)
 
 Installation
 ============

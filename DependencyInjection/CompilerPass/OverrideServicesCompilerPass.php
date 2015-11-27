@@ -14,11 +14,11 @@ class OverrideServicesCompilerPass implements CompilerPassInterface
      */
     public function process(ContainerBuilder $container)
     {
-        if ($container->has('liip_theme.theme_controller') && $container->has('liip_theme_provider.theme_controller')) {
+        if ($container->has('liip_theme.theme_controller')) {
             $container->setDefinition('liip_theme.theme_controller', $container->getDefinition('liip_theme_provider.theme_controller'));
         }
 
-        if ($container->has('liip_theme.active_theme') && $container->has('liip_theme_provider.active_theme')) {
+        if ($container->has('liip_theme.active_theme')) {
             $container->setDefinition('liip_theme.active_theme', $container->getDefinition('liip_theme_provider.active_theme'));
         }
     }
