@@ -2,7 +2,7 @@
 
 namespace Neirda\Bundle\LiipThemeProvider\Controller;
 
-use Neirda\Bundle\LiipThemeProvider\ThemeContainerInterface;
+use Neirda\Bundle\LiipThemeProvider\Theme\ThemeContainerInterface;
 use Liip\ThemeBundle\ActiveTheme;
 use Liip\ThemeBundle\Controller\ThemeController as Base;
 use Symfony\Component\HttpFoundation\Request;
@@ -10,13 +10,13 @@ use Symfony\Component\HttpFoundation\Request;
 class ThemeController extends Base
 {
     /**
-     * @var ThemeContainerInterface|null
+     * @var null|ThemeContainerInterface
      */
     protected $themeContainer = null;
 
     /**
      * {@inheritdoc}
-     * @param ThemeContainerInterface|null $themeContainer
+     * @param null|ThemeContainerInterface $themeContainer
      */
     public function __construct(ActiveTheme $activeTheme, array $themes, array $cookieOptions, ThemeContainerInterface $themeContainer)
     {

@@ -20,7 +20,7 @@ class LiipThemeProviderExtension extends Extension
     public function load(array $configs, ContainerBuilder $container)
     {
         $configuration = new Configuration();
-        $config = $this->processConfiguration($configuration, $configs);
+        $config        = $this->processConfiguration($configuration, $configs);
 
         if (is_array($config['filesystem']) && count($config['filesystem']) > 0) {
             $container->setParameter('liip_theme_provider.config.filesystem.paths', $config['filesystem']);

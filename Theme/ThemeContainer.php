@@ -20,6 +20,11 @@ class ThemeContainer implements ThemeContainerInterface
     protected $themeList;
 
     /**
+     * @var bool
+     */
+    protected $isInitialized;
+
+    /**
      * Constructor.
      *
      * @param array $defaultThemeList
@@ -28,7 +33,8 @@ class ThemeContainer implements ThemeContainerInterface
     {
         $this->defaultThemeList = $defaultThemeList;
         $this->themeProviders   = array();
-        $this->themeList        = null;
+        $this->isInitialized    = false;
+        $this->themeList        = array();
     }
 
     /**
@@ -46,16 +52,13 @@ class ThemeContainer implements ThemeContainerInterface
      */
     public function getThemeList()
     {
-        if (null === $this->themeList) {
+        if (false === $this->isInitialized) {
             $this->themeList = $this->defaultThemeList;
             foreach ($this->themeProviders as $themeProvider) {
                 /** @var ThemeProviderInterface $themeProvider */
                 $this->themeList = array_merge($this->themeList, $themeProvider->getThemeList());
             }
-        }
-
-        if (null === $this->themeList) {
-            $this->themeList = array();
+            $this->isInitialized = true;
         }
 
         return $this->themeList;

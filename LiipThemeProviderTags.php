@@ -2,7 +2,7 @@
 
 namespace Neirda\Bundle\LiipThemeProvider;
 
-abstract class LiipThemeProviderTags
+final class LiipThemeProviderTags
 {
     /**
      * @const THEME_PROVIDER
