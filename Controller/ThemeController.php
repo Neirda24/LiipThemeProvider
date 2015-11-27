@@ -18,7 +18,7 @@ class ThemeController extends Base
      * {@inheritdoc}
      * @param null|ThemeContainerInterface $themeContainer
      */
-    public function __construct(ActiveTheme $activeTheme, array $themes, array $cookieOptions, ThemeContainerInterface $themeContainer)
+    public function __construct(ActiveTheme $activeTheme, array $themes, array $cookieOptions, ThemeContainerInterface $themeContainer = null)
     {
         $this->themeContainer = $themeContainer;
         parent::__construct($activeTheme, $themes, $cookieOptions);
